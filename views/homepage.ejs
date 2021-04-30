@@ -1,0 +1,110 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Bata</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="icon" type="image/png" href="logo.png"/>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  
+ 
+</head>
+<body class="hold-transition sidebar-mini">
+	
+	<div class="wrapper">
+		<aside class="main-sidebar sidebar-dark-primary elevation-4">
+		<!-- Brand Logo -->
+			<a href="#" class="brand-link">
+			  <span style="text-align: center;">Menu</span>
+			</a>
+			<!-- Sidebar -->
+			<div class="sidebar">
+                <!-- Sidebar Menu -->
+  <nav class="mt-2">
+	<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+	  <li class="nav-item">
+		<a href="/create" class="nav-link">
+		  <i class="nav-icon far fa-circle text-info"></i>
+		  <p>Add Product</p>
+		</a>
+	  </li>
+	  <li class="nav-item">
+		<a href="/" class="nav-link">
+		  <i class="nav-icon far fa-circle text-info"></i>
+		  <p class="text">Sales Details</p>
+		</a>
+	  </li>
+	  <li class="nav-item">
+		<a href="/update" class="nav-link">
+		  <i class="nav-icon far fa-circle text-info"></i>
+		  <p class="text">Update stock</p>
+		</a>
+	  </li>
+      <li class="nav-item">
+		<a href="/delete" class="nav-link">
+		  <i class="nav-icon far fa-circle text-info"></i>
+		  <p class="text">Delete product</p>
+		</a>
+	  </li>
+	  
+	</ul>
+</nav>
+<!-- /.sidebar-menu -->
+			
+			</div>
+			<!-- /.sidebar -->
+		</aside>
+		
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			
+			<section class="content-header">
+				<h1 style="text-align: center;">Bata Inventory Management</h1>
+			</section>
+			<section class="content">
+                <div class="card">
+                    <div class="card-header">
+                
+                      <div class="card-tools">
+                        <p>Bata Corporation (originally, and in the Czech Republic and Slovakia, known as Baťa) is a Swiss-domiciled multinational footwear and fashion accessory manufacturer and retailer, founded in the town of Zlín, today in the Czech Republic. After World War II, its factories in socialist states were nationalized, while its branches in capitalist states remained family-owned. It is now based in Lausanne, Switzerland. The principal subsidiaries are Bata Europe (based in Zlín), Bata North America (based in Toronto), Bata Asia-Pacific-Africa (based in Singapore) and Bata Latin America (based in Mexico).
+
+A family-owned business, the company is organized into three business units: Bata, Bata Industrials (safety shoes) and AW Lab (sports style). The company is the world's leading shoemaker by volume, and it has a retail presence of over 5,300 shops in more than 70 countries and production facilities in 18 countries</p>
+                        <div class="card-body table-responsive p-0" style="height: 400px">
+                            <table class="table table-striped table-head-fixed text-nowrap">
+                                <tr>
+                                    <th style="width: 10%" >ID</th>
+                                    <th style="width: 10%" >Type</th>
+                                    <th style="width: 10%" >Size</th>
+                                    <th style="width: 10%" >Stock</th>
+                                    <th style="width: 10%" >Price</th>
+                                </tr>
+                            <tbody>
+                                <% for(var i=0; i<data.length; i++) { %>
+                                    <tr>
+                                        <td><%= data[i].id %></td>
+                                        <td><%= data[i].type %></td>
+                                        <td><%= data[i].size %></td>
+                                        <td><%= data[i].stock %></td>
+                                        <td>₹<%= data[i].price %>/-</td>
+                                    </tr>
+                                    <% } %>
+                                </tbody>
+                                </table>
+                      </div>
+                    </div>
+                </div>
+				
+			</section>
+		</div>
+		
+	</div>
+</body>
+</html>
